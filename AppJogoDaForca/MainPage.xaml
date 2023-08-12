@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppJogoDaForca.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
+            <Button
+                Margin="0,10,0,0"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Center"
+                Text="Reniciar" />
+            <Image
+                x:Name="ImageForca"
+                Margin="0,20,0,0"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                Source="forca1.png" />
+
+            <Label
+                x:Name="LblTips"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="LblText"
+                CharacterSpacing="5"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout x:Name="KeyboardContainer" Spacing="3">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="3">
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="Q" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="W" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="E" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="R" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="T" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="Y" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="U" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="I" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="O" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="P" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="3">
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="A" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="S" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="D" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="F" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="G" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="H" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="J" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="K" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="L" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                    Margin="0,0,0,10"
+                    HorizontalOptions="Center"
+                    Spacing="3">
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="Z" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="X" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="C" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="V" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="B" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="N" />
+                    <Button
+                        Clicked="OnButtonClick"
+                        HorizontalOptions="Center"
+                        Text="M" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </FlexLayout>
+    </ScrollView>
+
+</ContentPage>
