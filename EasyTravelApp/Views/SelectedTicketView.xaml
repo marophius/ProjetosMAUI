@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EasyTravelApp.Views.SelectedTicketView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="SelectedTicketView"
+    BackgroundColor="{StaticResource Secondary}"
+    FlowDirection="LeftToRight"
+    Shell.NavBarIsVisible="False">
+    <Grid>
+        <Grid RowDefinitions="Auto,Auto,*,Auto">
+            <Border
+                Padding="0,10"
+                BackgroundColor="{StaticResource Primary}"
+                HeightRequest="65"
+                Stroke="{StaticResource Primary}">
+                <Border.Shadow>
+                    <Shadow
+                        Brush="Black"
+                        Opacity="0.7"
+                        Radius="10"
+                        Offset="5,10" />
+                </Border.Shadow>
+                <Grid
+                    Padding="10,0"
+                    HeightRequest="50"
+                    VerticalOptions="Center">
+                    <ImageButton
+                        Margin="10,0"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Source="dotsmenu"
+                        WidthRequest="25">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                    <Label
+                        FontFamily="BarlowRegular"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Text="Easy Travel"
+                        VerticalOptions="Center" />
+                    <ImageButton
+                        Margin="10,0"
+                        HeightRequest="25"
+                        HorizontalOptions="Start"
+                        Source="leftchevron"
+                        WidthRequest="25">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1" RowDefinitions="Auto,Auto">
+                <Path
+                    Aspect="Fill"
+                    Data="M 211.5157012939453 506.2601013183594 L 211.5157012939453 154.91004943847656 L 652.75048828125 154.91004943847656 L 652.75048828125 500.3701171875 C 506.6836853027344 594.9873657226562 359.6053771972656 596.95068359375 211.5157012939453 506.2601013183594 Z "
+                    Fill="{StaticResource Primary}"
+                    Stroke="{StaticResource Primary}" />
+                <HorizontalStackLayout Margin="0,50" HorizontalOptions="Center">
+                    <VerticalStackLayout>
+                        <Label FontSize="25" Text="JKTA, ID" />
+                        <HorizontalStackLayout>
+                            <Label FontSize="10" Text="Jakarta" />
+                            <Label FontSize="10" Text="21 March 2022" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                    <Line
+                        Margin="10,20"
+                        Stroke="{StaticResource White}"
+                        StrokeDashArray="3, 1"
+                        StrokeDashOffset="1"
+                        StrokeThickness="2.5"
+                        VerticalOptions="Center"
+                        WidthRequest="80"
+                        X2="100" />
+                    <VerticalStackLayout>
+                        <Label FontSize="25" Text="TYOA, JP" />
+                        <HorizontalStackLayout>
+                            <Label FontSize="10" Text="Tokyo" />
+                            <Label FontSize="10" Text="21 March 2022" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Grid>
+
+            <Button
+                Grid.Row="3"
+                Margin="20"
+                BackgroundColor="{StaticResource Primary}"
+                CornerRadius="35"
+                FontFamily="BarlowBold"
+                FontSize="25"
+                HeightRequest="55"
+                Text="Search Ticket" />
+
+        </Grid>
+
+        <Border
+            Margin="30,200,30,90"
+            Padding="0"
+            BackgroundColor="{StaticResource White}"
+            HeightRequest="450"
+            HorizontalOptions="Center"
+            Stroke="{x:Null}"
+            StrokeShape="RoundRectangle 20, 20,20,20"
+            StrokeThickness="0"
+            VerticalOptions="Center"
+            WidthRequest="330">
+            <Grid RowDefinitions="Auto,Auto,*,Auto">
+                <Grid Margin="40,10">
+                    <RadioButton
+                        Content="One way trip"
+                        IsChecked="True"
+                        Style="{StaticResource RadioButtonStyle}" />
+                    <RadioButton
+                        Content="Round trip"
+                        HorizontalOptions="End"
+                        IsEnabled="False"
+                        Style="{StaticResource RadioButtonStyle}" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Line
+                        HeightRequest="1"
+                        Stroke="{StaticResource Gray100}"
+                        StrokeDashArray="5,1"
+                        StrokeDashOffset="0"
+                        StrokeThickness="3"
+                        X2="500" />
+                    <Path
+                        Aspect="Fill"
+                        Data="M 1.3285494937249204e-14 216.96859741210938 A 216.96859741210938 216.96859741210938 0 0 1 -3.985648481174761e-14 -216.96859741210938L0 0 Z"
+                        Fill="{StaticResource Primary}"
+                        HeightRequest="25"
+                        HorizontalOptions="End"
+                        Stroke="{StaticResource Primary}"
+                        WidthRequest="12.5" />
+
+                    <Path
+                        Aspect="Fill"
+                        Data="M -2.8813035263903705e-14 -156.85086059570312 A 156.85086059570312 156.85086059570312 0 0 1 4.802172656921677e-14 156.85086059570312L0 0 Z"
+                        Fill="{StaticResource Primary}"
+                        HeightRequest="25"
+                        HorizontalOptions="Start"
+                        Stroke="{StaticResource Primary}"
+                        WidthRequest="12.5" />
+                </Grid>
+                <Grid
+                    Grid.Row="2"
+                    Margin="15,10"
+                    RowDefinitions="Auto, Auto, Auto, Auto">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto,Auto">
+                        <VerticalStackLayout Margin="0,0,0,10">
+                            <Label Text="From" TextColor="{StaticResource Primary}" />
+                            <Entry
+                                FontSize="12"
+                                HorizontalTextAlignment="Start"
+                                IsReadOnly="True"
+                                Text="Jakarta, Indonesia (JKTA) / SoeKarno Hatta"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Line
+                                HeightRequest="1"
+                                Stroke="{StaticResource Primary}"
+                                X2="500" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,10">
+                            <Label Text="Destination" TextColor="{StaticResource Primary}" />
+                            <Entry
+                                FontSize="12"
+                                HorizontalTextAlignment="Start"
+                                IsReadOnly="True"
+                                Text="Tokyo, Japan (TYOA) / Haneda"
+                                TextColor="{StaticResource Tertiary}" />
+                            <Line
+                                HeightRequest="1"
+                                Stroke="{StaticResource Primary}"
+                                X2="500" />
+                        </VerticalStackLayout>
+                        <ImageButton
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Margin="0,30,0,0"
+                            Padding="10"
+                            BackgroundColor="{StaticResource Primary}"
+                            CornerRadius="20"
+                            HeightRequest="60"
+                            Source="swaparrows"
+                            VerticalOptions="Center"
+                            WidthRequest="60" />
+                    </Grid>
+                    <Grid Grid.Row="1" ColumnDefinitions="Auto, *, Auto">
+                        <Label
+                            Text="Select Date"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Margin="10,15,0,0">
+                            <DatePicker FontSize="12" TextColor="{StaticResource Tertiary}" />
+                            <Line
+                                HeightRequest="1"
+                                Stroke="{StaticResource Primary}"
+                                X2="500" />
+                        </VerticalStackLayout>
+                        <Image
+                            Grid.Column="2"
+                            HeightRequest="15"
+                            Source="downchevron"
+                            WidthRequest="15">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
+                    <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto">
+                        <Label
+                            Text="Passengers"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            Margin="10,20,0,0">
+                            <Picker
+                                Title="Select passengers"
+                                FontSize="12"
+                                HorizontalTextAlignment="Start"
+                                TextColor="{StaticResource Tertiary}"
+                                TitleColor="{StaticResource Tertiary}">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>2 Persons</x:String>
+                                        <x:String>3 Persons</x:String>
+                                        <x:String>4 Persons</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                            <Line
+                                HeightRequest="1"
+                                Stroke="{StaticResource Primary}"
+                                X2="500" />
+                        </VerticalStackLayout>
+                        <Image
+                            Grid.Column="2"
+                            HeightRequest="15"
+                            Source="downchevron"
+                            VerticalOptions="Center"
+                            WidthRequest="15">
+                            <Image.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}" />
+                            </Image.Behaviors>
+                        </Image>
+                    </Grid>
+                    <Grid
+                        Grid.Row="3"
+                        Margin="0,20,0,0"
+                        ColumnDefinitions="*,*,*">
+                        <RadioButton
+                            Content="Economy"
+                            IsChecked="True"
+                            Style="{StaticResource RadioButtonStyle}" />
+                        <RadioButton
+                            Grid.Column="1"
+                            Content="Business"
+                            IsChecked="False"
+                            Style="{StaticResource RadioButtonStyle}" />
+                        <RadioButton
+                            Grid.Column="2"
+                            Content="Executive"
+                            IsChecked="False"
+                            Style="{StaticResource RadioButtonStyle}" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

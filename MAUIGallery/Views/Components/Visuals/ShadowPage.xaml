@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Components.Visuals.ShadowPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ShadowPage">
+    <VerticalStackLayout Padding="10">
+        <Border Padding="10" BackgroundColor="White">
+            <Border.Shadow>
+                <Shadow Brush="Blue" Radius="3" />
+            </Border.Shadow>
+            <VerticalStackLayout>
+                <Label Text="LALALALALA" />
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

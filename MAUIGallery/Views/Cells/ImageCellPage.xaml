@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Cells.ImageCellPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ImageCellPage">
+    <VerticalStackLayout>
+        <TableView>
+            <TableSection Title="Lista de Colaboradores">
+                <ImageCell
+                    Detail="Analista de sistemas"
+                    DetailColor="AliceBlue"
+                    ImageSource="dotnet_bot.png"
+                    Text="João Rodrigues" />
+            </TableSection>
+        </TableView>
+    </VerticalStackLayout>
+</ContentPage>

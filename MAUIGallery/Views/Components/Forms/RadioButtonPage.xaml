@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Components.Forms.RadioButtonPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="RadioButtonPage">
+    <VerticalStackLayout Padding="10">
+        <VerticalStackLayout>
+            <Label
+                HorizontalOptions="Start"
+                Text="Qual linguagem de programação você mais gosta ?"
+                VerticalOptions="Center" />
+            <RadioButton Content="C#" />
+            <RadioButton Content="Java" />
+            <RadioButton Content="JavaScript" />
+        </VerticalStackLayout>
+        <VerticalStackLayout RadioButtonGroup.GroupName="ask2">
+            <Label
+                HorizontalOptions="Start"
+                Text="Qual linguagem de programação você mais odeia ?"
+                VerticalOptions="Center" />
+            <RadioButton
+                x:Name="CheckedTest"
+                Content="C#"
+                IsChecked="False" />
+            <RadioButton
+                x:Name="CheckedTest2"
+                Content="Java"
+                IsChecked="False" />
+            <RadioButton
+                x:Name="CheckedTest3"
+                Content="JavaScript"
+                IsChecked="False" />
+            <Label x:Name="LblResultAsk01" IsVisible="false" />
+        </VerticalStackLayout>
+        <VerticalStackLayout RadioButtonGroup.GroupName="ask3">
+            <Label
+                HorizontalOptions="Start"
+                Text="Qual é o mascote do .NET MAUI?"
+                VerticalOptions="Center" />
+            <RadioButton Value="Robot">
+                <RadioButton.Content>
+                    <HorizontalStackLayout>
+                        <Label Text="C#" />
+                        <Image HeightRequest="30" Source="dotnet_bot.png" />
+                    </HorizontalStackLayout>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton Content="Java" />
+            <RadioButton Content="JavaScript" IsChecked="False" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

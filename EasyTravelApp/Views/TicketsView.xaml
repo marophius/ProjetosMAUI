@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EasyTravelApp.Views.TicketsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="TicketsView"
+    BackgroundColor="{StaticResource Secondary}"
+    FlowDirection="LeftToRight"
+    Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="Auto, Auto">
+        <Border
+            Padding="0,10"
+            BackgroundColor="{StaticResource Primary}"
+            HeightRequest="65"
+            Stroke="{StaticResource Primary}">
+            <Border.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.7"
+                    Radius="10"
+                    Offset="5,20" />
+            </Border.Shadow>
+            <Grid
+                Padding="10,0"
+                HeightRequest="50"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="10,0"
+                    HeightRequest="25"
+                    HorizontalOptions="End"
+                    Source="dotsmenu"
+                    WidthRequest="25">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                    </ImageButton.Behaviors>
+                </ImageButton>
+                <Label
+                    FontFamily="BarlowRegular"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="Available Tickets"
+                    VerticalOptions="Center" />
+                <ImageButton
+                    Margin="10,0"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    Source="leftchevron"
+                    WidthRequest="25">
+                    <ImageButton.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="{StaticResource White}" />
+                    </ImageButton.Behaviors>
+                </ImageButton>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <Path
+                Margin="0,-1"
+                Aspect="Fill"
+                Data="M 209.79371643066406 478.7085266113281 L 209.79371643066406 270.2857360839844 L 693.8199462890625 270.2857360839844 L 693.8199462890625 477.0549621582031 C 545.6290283203125 552.7761840820312 384.2869567871094 553.327392578125 209.79371643066406 478.7085266113281 Z "
+                Fill="{StaticResource Primary}"
+                HeightRequest="200" />
+            <HorizontalStackLayout Margin="0,50" HorizontalOptions="Center">
+                <VerticalStackLayout>
+                    <Label FontSize="25" Text="JKTA, ID" />
+                    <HorizontalStackLayout>
+                        <Label FontSize="10" Text="Jakarta" />
+                        <Label FontSize="10" Text="21 March 2022" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Line
+                    Margin="10,20"
+                    Stroke="{StaticResource White}"
+                    StrokeDashArray="3, 1"
+                    StrokeDashOffset="1"
+                    StrokeThickness="2.5"
+                    VerticalOptions="Center"
+                    WidthRequest="80"
+                    X2="100" />
+                <VerticalStackLayout>
+                    <Label FontSize="25" Text="TYOA, JP" />
+                    <HorizontalStackLayout>
+                        <Label FontSize="10" Text="Tokyo" />
+                        <Label FontSize="10" Text="21 March 2022" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
