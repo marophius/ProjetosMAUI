@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppTask.Views.StartPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:AppTask.Converters"
+    Title="StartPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <converter:BoolToTextDecorationStrikeThroughConverter x:Key="BoolToTextDecorationStrikeThrough" />
+    </ContentPage.Resources>
+    <Grid RowDefinitions="70, *">
+        <Border
+            Margin="20,20,20,0"
+            BackgroundColor="#F7f7f7"
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 25"
+            StrokeThickness="0">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnBorderClickedToFocusEntry" />
+            </Border.GestureRecognizers>
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Margin="9,0,0,0"
+                    HeightRequest="33"
+                    Source="find.png"
+                    WidthRequest="33" />
+                <Entry
+                    x:Name="Entry_Search"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Pesquisar ..."
+                    PlaceholderColor="#a8a8a8" />
+            </StackLayout>
+        </Border>
+        <!--  Inicio - Segunda Linha  -->
+        <CollectionView x:Name="CollectionViewTasks" Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10,5" ColumnDefinitions="70, *, 70">
+                        <CheckBox
+                            Grid.Column="0"
+                            HorizontalOptions="Center"
+                            IsChecked="{Binding IsCompleted}">
+                            <CheckBox.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnChangeTaskStatus" />
+                            </CheckBox.GestureRecognizers>
+                        </CheckBox>
+                        <StackLayout Grid.Column="1">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnTapToEdit" />
+                            </StackLayout.GestureRecognizers>
+                            <Label
+                                FontAttributes="Bold"
+                                Text="{Binding Name}"
+                                TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThrough}}" />
+                            <Label Text="{Binding PrevisionDate}" TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThrough}}" />
+                        </StackLayout>
+                        <Image
+                            Grid.Column="2"
+                            Source="trash.png"
+                            WidthRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnDelete" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label
+            x:Name="LblEmptyText"
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Text="O que você deseja fazer ?"
+            TextColor="{StaticResource Gray400}"
+            VerticalOptions="Center" />
+        <Button
+            Grid.Row="1"
+            Margin="15"
+            BackgroundColor="{StaticResource Black}"
+            Clicked="Button_Clicked"
+            CornerRadius="35"
+            HorizontalOptions="Center"
+            Text="+   Adicionar Tarefa"
+            VerticalOptions="End"
+            WidthRequest="220" />
+        <!--  Final - Segunda Linha  -->
+    </Grid>
+</ContentPage>

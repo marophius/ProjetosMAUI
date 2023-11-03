@@ -11,7 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppJogoDaForca", "AppJogoDa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DallEChallenge", "DallEChallenge\DallEChallenge.csproj", "{2558ABBA-0F86-4B65-BB35-3763D9FAAC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTravelApp", "EasyTravelApp\EasyTravelApp.csproj", "{A68675AD-3051-4108-B895-866ADB961CA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTravelApp", "EasyTravelApp\EasyTravelApp.csproj", "{A68675AD-3051-4108-B895-866ADB961CA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask", "AppTask\AppTask.csproj", "{D54C24EC-85DE-4F43-8631-49D26054117B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Models", "AppTask.Models\AppTask.Models.csproj", "{888222ED-B1FE-462C-8EE7-CB83654AC948}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Data", "AppTask.Data\AppTask.Data.csproj", "{7574CE9D-223D-4AFC-A2A1-3CC982EAE7F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppTask.Database.Migration.Runtime", "AppTask.Database.Migration.Runtime\AppTask.Database.Migration.Runtime.csproj", "{7299B74B-7890-4F71-8717-D8B50F07A21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMVVM", "AppMVVM\AppMVVM.csproj", "{DBD64B45-6FFF-47BD-A3FB-496587272067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +59,30 @@ Global
 		{A68675AD-3051-4108-B895-866ADB961CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A68675AD-3051-4108-B895-866ADB961CA2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A68675AD-3051-4108-B895-866ADB961CA2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54C24EC-85DE-4F43-8631-49D26054117B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{888222ED-B1FE-462C-8EE7-CB83654AC948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888222ED-B1FE-462C-8EE7-CB83654AC948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888222ED-B1FE-462C-8EE7-CB83654AC948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888222ED-B1FE-462C-8EE7-CB83654AC948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7574CE9D-223D-4AFC-A2A1-3CC982EAE7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7574CE9D-223D-4AFC-A2A1-3CC982EAE7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7574CE9D-223D-4AFC-A2A1-3CC982EAE7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7574CE9D-223D-4AFC-A2A1-3CC982EAE7F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7299B74B-7890-4F71-8717-D8B50F07A21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7299B74B-7890-4F71-8717-D8B50F07A21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7299B74B-7890-4F71-8717-D8B50F07A21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7299B74B-7890-4F71-8717-D8B50F07A21F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD64B45-6FFF-47BD-A3FB-496587272067}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

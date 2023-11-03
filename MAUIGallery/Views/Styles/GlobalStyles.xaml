@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Styles.GlobalStyles"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="GlobalStyles">
+    <VerticalStackLayout>
+        <Label Text="Artigo 1" />
+        <Label Text="P1" />
+        <Label Text="P2" />
+        <Label Text="Artigo 2" />
+        <Label Text="P1" />
+        <Label Text="P2" />
+        <Label Text="P3" />
+    </VerticalStackLayout>
+</ContentPage>

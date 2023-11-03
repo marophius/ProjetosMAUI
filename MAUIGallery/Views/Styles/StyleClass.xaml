@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Styles.StyleClass"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="StyleClass">
+    <ContentPage.Resources>
+        <Style Class="StyleClassParagraph" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="Gray" />
+        </Style>
+        <Style Class="StyleClassPadding" TargetType="Label">
+            <Setter Property="Padding" Value="20" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            StyleClass="StyleClassPadding, StyleClassParagraph"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

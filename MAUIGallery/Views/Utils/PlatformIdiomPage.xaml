@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Utils.PlatformIdiomPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PlatformIdiomPage">
+    <VerticalStackLayout Padding="{OnPlatform Default='10, 10, 10, 20', WinUI='20, 10, 10, 0', Android=30, iOS=40}">
+        <Label
+            HorizontalOptions="Center"
+            Text="{OnIdiom Default='Indefinido',
+                           Desktop='PC',
+                           Phone='Celular'}"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

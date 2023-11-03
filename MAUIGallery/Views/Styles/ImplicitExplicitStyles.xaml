@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Styles.ImplicitExplicitStyles"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ImplicitExplicitStyles">
+    <ContentPage.Resources>
+        <!--  Implicit  -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+
+        <!--  Explicit  -->
+        <Style x:Key="StyleTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Margin" Value="0, 10, 0, 10" />
+        </Style>
+        <Style x:Key="StyleParagraph" TargetType="Label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout Padding="10">
+        <Label Style="{StaticResource StyleTitle}" Text="Artigo 1" />
+        <Label Style="{StaticResource StyleParagraph}" Text="P1" />
+        <Label Style="{StaticResource StyleParagraph}" Text="P2" />
+        <Label Style="{StaticResource StyleTitle}" Text="Artigo 2" />
+        <Label Style="{StaticResource StyleParagraph}" Text="P1" />
+        <Label Style="{StaticResource StyleParagraph}" Text="P2" />
+        <Label Style="{StaticResource StyleParagraph}" Text="P3" />
+    </VerticalStackLayout>
+</ContentPage>

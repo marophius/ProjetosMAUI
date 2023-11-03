@@ -1,9 +1,12 @@
 ﻿using MAUIGallery.Models;
+using MAUIGallery.Views.Animations;
 using MAUIGallery.Views.Cells;
 using MAUIGallery.Views.Components.Forms;
 using MAUIGallery.Views.Components.Mains;
 using MAUIGallery.Views.Layouts;
 using MAUIGallery.Views.Lists;
+using MAUIGallery.Views.Styles;
+using MAUIGallery.Views.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,39 @@ namespace MAUIGallery.Repositories
             LoadForms();
             LoadCells();
             LoadLists();
+            LoadStyles();
+            LoadAnimations();
+            LoadUtils();
+        }
+        private void LoadUtils()
+        {
+            var components = new List<Component> {
+              new Component {
+                Title = "Behavior",
+                Description = "Lógica que pode ser associada a um componente de tela.",
+                Page = typeof(BehaviorPage)
+              },
+              new Component {
+                Title = "Trigger",
+                Description = "Gatilho que dispara uma alteração visual no componente.",
+                Page = typeof(TriggerPage)
+              },
+              new Component {
+                Title = "OnPlatform/OnIdiom",
+                Description = "Define valores diferentes entre o S.O e também pelo tipo de dispositivo.",
+                Page = typeof(PlatformIdiomPage)
+              },
+            };
+
+            var group = new GroupComponent()
+            {
+                Name = "Utils"
+            };
+
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
         }
 
         private void LoadLayout()
@@ -310,6 +346,91 @@ namespace MAUIGallery.Repositories
             var group = new GroupComponent() { Name = "Listas" };
 
             group.AddRange(components);
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+
+        private void LoadStyles()
+        {
+
+            var components = new List<Component> {
+                    new Component {
+                        Title = "Implicit & Explicit Styles",
+                        Description = "Explicar como funciona os estilos.",
+                        Page = typeof(ImplicitExplicitStyles)
+                    },
+
+                    new Component {
+                        Title = "Global Style",
+                        Description = "Como criar estilos para todo o seu projeto.",
+                        Page = typeof(GlobalStyles)
+                    },
+                    new Component {
+                        Title = "ApplyToDerivedTypes",
+                        Description = "Aplicar um estilo aos elementos derivados do controle atual.",
+                        Page = typeof(ApplyDerivedTitles)
+                    },
+                    new Component {
+                        Title = "Inheritance Style",
+                        Description = "Como criar estilos herdados ou derivados de outros.",
+                        Page = typeof(InheritanceStyles)
+                    },
+                    new Component {
+                        Title = "Style Class",
+                        Description = "Cria classes de estilos para serem aplicados aos componentes.",
+                        Page = typeof(StyleClass)
+                    },
+                    new Component {
+                        Title = "StaticResource/DynamicResource",
+                        Description = "Define se o estilo pode ser alterado em tempo real.",
+                        Page = typeof(StaticDynamicResource)
+                    },
+                    new Component {
+                        Title = "Tema",
+                        Description = "Define um tema padrão para o nosso objeto.",
+                        Page = typeof(Theme)
+                    },
+                    new Component {
+                        Title = "AppThemeBinding",
+                        Description = "Adapta o tema do aplicativo ao do sistema operacional.",
+                        Page = typeof(AppThemeBinding)
+                    },
+                    new Component {
+                        Title = "Visual State Manager (VSM)",
+                        Description = "Personaliza a apresentação de acordo com o estado dos componentes.",
+                        Page = typeof(VisualStateManagerPage)
+                    },
+                };
+
+            var group = new GroupComponent()
+            {
+                Name = "Styles"
+            };
+
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+
+        private void LoadAnimations()
+        {
+
+            var components = new List<Component> {
+                    new Component {
+                        Title = "Basic Animation",
+                        Description = "Animação básica do .Net MAUI.",
+                        Page = typeof(BasicAnimation)
+                    }, 
+            };
+
+            var group = new GroupComponent()
+            {
+                Name = "Styles"
+            };
+
+            group.AddRange(components);
+
             _components.AddRange(components);
             _groupComponents.Add(group);
         }

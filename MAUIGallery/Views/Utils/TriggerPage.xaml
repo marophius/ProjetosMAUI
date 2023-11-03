@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUIGallery.Views.Utils.TriggerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:trigger="clr-namespace:MAUIGallery.Views.Utils.Triggers"
+    Title="TriggerPage">
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Style.Triggers>
+                <Trigger TargetType="Entry" Property="IsEnabled" Value="False">
+                    <Setter Property="BackgroundColor" Value="LightGray" />
+                    <Setter Property="PlaceholderColor" Value="Black" />
+                </Trigger>
+                <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="Gold" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout Padding="20">
+        <Entry
+            x:Name="EntryName"
+            IsEnabled="True"
+            Placeholder="Digite um nome" />
+        <Button IsEnabled="False" Text="Salvar">
+            <Button.Triggers>
+                <DataTrigger
+                    Binding="{Binding Source={x:Reference EntryName}, Path=Text.Length}"
+                    TargetType="Button"
+                    Value="0">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        <Entry Placeholder="Digite sua idade">
+            <Entry.Triggers>
+                <EventTrigger Event="TextChanged">
+                    <trigger:AgeTrigger />
+                </EventTrigger>
+            </Entry.Triggers>
+        </Entry>
+        <Entry x:Name="EntryEmail" Placeholder="Digite o seu e-mail">
+            <Entry.Triggers>
+                <MultiTrigger TargetType="Entry">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Source={x:Reference EntryEmail}, Path=Text}" Value="18" />
+                        <PropertyCondition Property="Text" Value="elias.ribeiro.gmail.com" />
+                    </MultiTrigger.Conditions>
+                    <Setter Property="TextColor" Value="Green" />
+                </MultiTrigger>
+            </Entry.Triggers>
+        </Entry>
+    </VerticalStackLayout>
+</ContentPage>
