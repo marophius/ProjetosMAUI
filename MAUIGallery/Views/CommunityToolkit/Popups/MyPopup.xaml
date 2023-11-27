@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="MAUIGallery.Views.CommunityToolkit.Popups.MyPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    CanBeDismissedByTappingOutsideOfPopup="False"
+    HorizontalOptions="Center"
+    Size="400, 200"
+    VerticalOptions="Center">
+    <VerticalStackLayout>
+        <Button
+            Clicked="ClosePopUp"
+            HorizontalOptions="EndAndExpand"
+            Text="X" />
+
+    </VerticalStackLayout>
+</toolkit:Popup>

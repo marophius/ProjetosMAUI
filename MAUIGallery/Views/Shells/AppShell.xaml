@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="MAUIGallery.Views.Shells.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MAUIGallery.Views.Shells.Pages"
+    Title="AppShell">
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10,0" ColumnDefinitions="*, 40">
+                <Label
+                    Text="{Binding Title}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Grid.Column="1"
+                    Margin="5"
+                    Source="{Binding Icon}" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10,0" ColumnDefinitions="*, 40">
+                <Label
+                    Text="{Binding Title}"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+                <Image
+                    Grid.Column="1"
+                    Margin="5"
+                    Source="{Binding Icon}" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <StackLayout>
+            <Image HeightRequest="70" Source="dotnet_bot.png" />
+            <Label
+                FontSize="10"
+                HorizontalOptions="Center"
+                Text="Icaro Félix"
+                TextColor="Black" />
+            <Label
+                FontSize="8"
+                HorizontalOptions="Center"
+                Text="ifeme08@gmail.com" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Pagina01" FlyoutIcon="one.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page01}" Route="page01" />
+    </FlyoutItem>
+    <FlyoutItem Title="Pagina 02" FlyoutIcon="two.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page02}" Route="page02" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pagina 03" FlyoutIcon="three.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page03}" Route="page03" />
+    </FlyoutItem>
+    <FlyoutItem Title="Pagina 04" FlyoutIcon="four.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page04}" Route="page04" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pagina 05" FlyoutIcon="five.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Page05}" Route="page05" />
+    </FlyoutItem>
+    <MenuItem IconImageSource="five.png" Text="Sobre o Autor" />
+
+    <Shell.FlyoutFooter>
+        <Label FontSize="8" Text="Versão: 1.0.0" />
+    </Shell.FlyoutFooter>
+    <!--
+    Outra forma de fazer a mesma coisa acima
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <ShellContent
+Title="Página 01"
+ContentTemplate="{DataTemplate pages:Page01}"
+Icon="one.png" />
+    <ShellContent
+Title="Página 02"
+ContentTemplate="{DataTemplate pages:Page02}"
+Icon="two.png" />
+    <ShellContent
+Title="Página 03"
+ContentTemplate="{DataTemplate pages:Page03}"
+Icon="three.png" />
+</FlyoutItem>
+
+    -->
+
+    <!--
+    <TabBar>
+          Lazy Loading
+        <ShellContent
+            Title="Página 01"
+            ContentTemplate="{DataTemplate pages:Page01}"
+            Icon="one.png" />
+        <ShellContent
+            Title="Página 02"
+            ContentTemplate="{DataTemplate pages:Page02}"
+            Icon="two.png" />
+        <ShellContent
+            Title="Página 03"
+            ContentTemplate="{DataTemplate pages:Page03}"
+            Icon="three.png" />
+
+         Eager Loading
+        <ShellContent Title="Page05" Icon="five.png">
+            <pages:Page05 />
+        </ShellContent>
+        <Tab Title="4 e 5">
+            <ShellContent
+                Title="Page04"
+                Icon="four.png"
+                Shell.TabBarIsVisible="False">
+                <pages:Page04 />
+            </ShellContent>
+            <ShellContent Title="Page05" Icon="five.png">
+                <pages:Page05 />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+    -->
+</Shell>

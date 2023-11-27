@@ -36,12 +36,16 @@ public partial class StartPage : ContentPage
             .StartWith(new EventPattern<TextChangedEventArgs>(Entry_Search, new TextChangedEventArgs("", "")))
             .Select(x =>
             {
-                if (string.IsNullOrEmpty(x.EventArgs.NewTextValue) || string.IsNullOrWhiteSpace(x.EventArgs.NewTextValue))
+                var searchString = x.EventArgs.NewTextValue.ToLower();
+                if (string.IsNullOrEmpty(searchString) || string.IsNullOrWhiteSpace(searchString))
                 {
                     return _tasksObservable;
                 }
 
-                return _tasksObservable.Select(taskList => taskList.Where(t => t.Name.ToLower().Contains(x.EventArgs.NewTextValue.ToLower())).ToList());
+                return _tasksObservable
+                                    .Select(taskList => taskList
+                                                            .Where(t => t.Name.ToLower().Contains(searchString))
+                                                            .ToList());
             })
             .Switch()
             .Do(val =>

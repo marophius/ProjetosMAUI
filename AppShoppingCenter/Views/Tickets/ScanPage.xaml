@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Tickets.ScanPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
+    Title="">
+    <ContentPage.BindingContext>
+        <vm:ScanPageViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout Padding="25">
+            <Label SemanticProperties.HeadingLevel="Level1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Style="{StaticResource HeadingText01}" Text="Pague o seu" />
+                            <Span Text="{x:Static system:Environment.NewLine}" />
+                            <Span Style="{StaticResource HeadingText02}">ESTACIONAMENTO</Span>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Border Margin="0,50,0,0" Style="{StaticResource BorderStyle}">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScanCommand}" />
+                </Border.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Entry
+                        x:Name="ticketEntry"
+                        Margin="10,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Escanear ticket"
+                        SemanticProperties.Description="O número do Ticket é formado por 12 dígitos"
+                        SemanticProperties.Hint="Digite/Escaneie o ticket"
+                        Text="{Binding TicketNumber}"
+                        TextChanged="CursorFix">
+                        <Entry.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                                Command="{Binding CheckTicketNumberCommand}"
+                                CommandParameter="{x:Reference ticketEntry}"
+                                EventName="TextChanged" />
+                            <behaviors:MaskedBehavior Mask="XXX XXX XXX XXX" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <ImageButton
+                        Margin="0,0,10,0"
+                        Command="{Binding ScanCommand}"
+                        HeightRequest="28"
+                        HorizontalOptions="EndAndExpand"
+                        IsVisible="{OnPlatform WinUI=false,
+                                               Default=true}"
+                        SemanticProperties.Description="Leva a tela de escaneamento do Ticket utilizando a câmera ou webcam"
+                        SemanticProperties.Hint="Botão que ativa a câmera"
+                        Source="{AppThemeBinding Light='camera.png',
+                                                 Dark='camera_light.png'}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Border>
+            <Button
+                Command="{Binding ListCommand}"
+                SemanticProperties.Hint="Navega para a tela com todos os tickets já pagos"
+                Style="{StaticResource ButtonStyle}"
+                Text="Tickets pagos"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

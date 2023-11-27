@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppShoppingCenter.Views.Tickets.ResultPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:AppShoppingCenter.Libraries.Converters"
+    xmlns:vm="clr-namespace:AppShoppingCenter.ViewModels.Tickets"
+    Title="">
+    <ContentPage.Resources>
+        <converters:TimeSpanToTimeConverter x:Key="TimeSpanToTimeConverter" />
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <vm:ResultPageViewModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Style="{StaticResource HeadingText02}" Text="Estacionamento" />
+            <Border
+                Margin="0,40"
+                Padding="20"
+                Style="{StaticResource BorderDotStyle}">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Ticket #" />
+                                    <Span Text="{Binding Ticket.TicketNumber}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Margin="0,10,0,0" Style="{StaticResource SecondaryText}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Permanência: " />
+                                    <Span Text="{Binding Ticket, Converter={StaticResource TimeSpanToTimeConverter}}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Style="{StaticResource SecondaryText}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Entrada: " />
+                                    <Span Text="{Binding Ticket.DateIn, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Style="{StaticResource SecondaryText}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Saída: " />
+                                    <Span Text="{Binding Ticket.DateOut, StringFormat='{0:dd/MM/yyyy HH:mm}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Style="{StaticResource DetailText}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span FontAttributes="Bold" Text="Valor:" />
+                                    <Span FontAttributes="Bold" Text="{Binding Ticket.Price, StringFormat='{0:C}'}" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+            </Border>
+            <Label
+                HorizontalOptions="Center"
+                Style="{StaticResource SuccessText}"
+                Text="Pagamento aprovado" />
+            <Label
+                Margin="0,40,0,0"
+                HorizontalOptions="Center"
+                Style="{StaticResource ToleranceText}"
+                Text="Tolerância" />
+            <Label
+                Margin="0,20,0,0"
+                HorizontalOptions="Center"
+                Style="{StaticResource ToleranceMinutesText}"
+                Text="{Binding Tolerance, StringFormat='{0} min'}" />
+            <Label
+                Margin="0,-10,0,0"
+                HorizontalOptions="Center"
+                Style="{StaticResource SecondaryText}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="até " />
+                        <Span Text="{Binding Ticket.DateTolerance, StringFormat='{0:HH:mm}'}" />
+                        <Span Text=" min" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,10 +1,12 @@
 ﻿using MAUIGallery.Models;
 using MAUIGallery.Views.Animations;
 using MAUIGallery.Views.Cells;
+using MAUIGallery.Views.CommunityToolkit;
 using MAUIGallery.Views.Components.Forms;
 using MAUIGallery.Views.Components.Mains;
 using MAUIGallery.Views.Layouts;
 using MAUIGallery.Views.Lists;
+using MAUIGallery.Views.Shells;
 using MAUIGallery.Views.Styles;
 using MAUIGallery.Views.Utils;
 using System;
@@ -31,7 +33,67 @@ namespace MAUIGallery.Repositories
             LoadStyles();
             LoadAnimations();
             LoadUtils();
+            LoadCommunityToolkit();
+            LoadShell();
         }
+
+        private void LoadShell()
+        {
+            var components = new List<Component> {
+              new Component {
+                Title = "Shell",
+                Description = "Uma nova forma de estruturar as páginas do nosso projeto",
+                Page = typeof(AppShell),
+                IsReplaceMainPage = true,
+              },
+            };
+
+            var group = new GroupComponent()
+            {
+                Name = "Shell"
+            };
+
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+        private void LoadCommunityToolkit()
+        {
+            var components = new List<Component> {
+              new Component {
+                Title = "Snackbar e Toast",
+                Description = "Forma de emitir mensagens para o usuário.",
+                Page = typeof(AlertsPage)
+              },
+              new Component {
+                Title = "Behaviors",
+                Description = "Apresenta alguns behaviors que são: Masked, StatusBar e EventToCommand(MVVM).",
+                Page = typeof(CommunityBehaviorPage)
+              },
+              new Component {
+                Title = "Expander",
+                Description = "Componente que oculta/apresenta conteúdo associado a ele.",
+                Page = typeof(ExpanderPage)
+              },
+              new Component {
+                Title = "PopUp",
+                Description = "Apresenta uma modal(PopUp) na tela.",
+                Page = typeof(PopUpPage)
+              },
+            };
+
+            var group = new GroupComponent()
+            {
+                Name = ".NET MAUI Community Toolkit"
+            };
+
+            group.AddRange(components);
+
+            _components.AddRange(components);
+            _groupComponents.Add(group);
+        }
+
         private void LoadUtils()
         {
             var components = new List<Component> {

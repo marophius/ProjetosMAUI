@@ -1,3 +1,4 @@
+using MAUIGallery.Models;
 using MAUIGallery.Repositories;
 
 namespace MAUIGallery.Views;
@@ -16,10 +17,16 @@ public partial class Menu : ContentPage
 	private void OnTapComponent(object sender, TappedEventArgs e)
 	{
 		
-		var page = (Type)e.Parameter;
+		var component = (Component)e.Parameter;
 
-		((FlyoutPage)App.Current.MainPage).Detail = new NavigationPage((Page)Activator.CreateInstance(page));
-		((FlyoutPage)App.Current.MainPage).IsPresented = false;
+        if (component.IsReplaceMainPage == false)
+        {
+            ((FlyoutPage)App.Current.MainPage).Detail = new NavigationPage((Page)Activator.CreateInstance(component.Page));
+            ((FlyoutPage)App.Current.MainPage).IsPresented = false;
+        }else
+        {
+            App.Current.MainPage = (Page)Activator.CreateInstance(component.Page);
+        }
 
     }
 
